@@ -1,0 +1,13 @@
+<header class="header">
+    <div class="header__box">
+        <div class="logo">
+            <a class="logo__text">Converter</a>
+        </div>
+    </div>
+    
+    <ul class="rates">
+        <li *ngFor="let currency of currencies" class="rates__item">
+            1 {{currency.cc}} to UAH: {{currency.rate}}
+        </li>
+    </ul>
+</header>

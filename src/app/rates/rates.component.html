@@ -1,0 +1,41 @@
+<main>
+    <div class="content">
+        <p class="section__title">Check live foreign currency exchange rates</p>
+        <form [formGroup]="form">
+            <div class="main__content">
+                <div class="content__left">
+                    <mat-form-field>
+                        <mat-select formControlName="firstCurrency" class="content__left-select"
+                            (selectionChange)="count()">
+                            <mat-option *ngFor="let rate of rates"
+                                value="{{rate.cc}}">{{rate.cc}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div content__left-input>
+                        <mat-form-field>
+                            <mat-label>sum</mat-label>
+                            <input formControlName="firstSum" matInput #first (input)="count()">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="content__right">
+                    <mat-form-field class="content__right-select">
+                        <mat-select formControlName="secondCurrency" (selectionChange)="count()">
+                            <mat-option *ngFor="let rate of rates"
+                                value="{{rate.cc}}">{{rate.cc}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div content__right-input>
+                        <mat-form-field>
+                            <mat-label>sum</mat-label>
+                            <input formControlName="secondSum" matInput #first (input)="count(false)">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
